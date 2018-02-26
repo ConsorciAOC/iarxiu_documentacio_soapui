@@ -7,9 +7,9 @@ Projecte amb tests SoapUI d'exemple d'integració al servei d'iArxiu.
 ### 1.1 **pre.propeties**
 
 ```
-ens=XXX (nom de l'ens)
-fons=XXX (nom del fons)
-rol=archivists (rol de l'usuari que fa l'ingrés)
+ens=XXX (àlies de l’ens, proporcionat pel Consorci AOC en l'alta al servei)
+fons=XXX (el fons l’ha de crear l’administrador d’ens. Més informació de com fer-ho: https://www.aoc.cat/knowledge-base/com-es-pot-donar-dalta-un-fons-documental/idservei/iarxiu/ i com associar administrador ens/arxiver al fons: https://www.aoc.cat/knowledge-base/com-assignar-un-administrador-de-fonsarxiver-un-fons-documental/idservei/iarxiu/ )
+rol=archivists (rol de l'usuari que fa l'ingrés, no canviar-ho)
 url=www.preproduccio.iarxiu.eacat.cat (url de l'entorn d'iarxiu)
 Subject=XXX (nom de l'usuari que fa l'ingrés)
 Issuer=SoapUI_Testing (aplicació)
@@ -29,7 +29,8 @@ Des de la vista de Project View (clic amb botó dret sobre el projecte importat 
 ## 2. Web de referència iArxiu (http://www.preproduccio.iarxiu.eacat.cat/)
 ### 2.1. Plantilles
 Els fitxers mets.xml fan ús de plantilles (on es defineixen els vocabularis permesos per construir les metadades). El primer cas d'ús (Expedient_UpDown_XAdES_Detached_Zip) fa ús de la plantilla urn:iarxiu:2.0:templates:catcert:PL_expedient. Els altres dos casos fan servir la urn:iarxiu:2.0:templates:catcert:PL_document.
-Aquestes plantilles han d'estar carregades a l'ens/fons a través de la Web de referència d'iArxiu (frontal web gestionat per l'arxiver). En cas contrari no es podrà ingressar cap paquet.
+Les plantilles han d'estar carregades a l'ens/fons a través de la Web de referència d'iArxiu. En cas contrari no es podrà ingressar cap paquet.
+Aquestes dues plantilles es carreguen a l'ens/fons de proves creat quan es sol·licita l'alta al servei a través del portal de suport (https://www.aoc.cat/portal-suport/iarxiu/idservei/iarxiu).
 
 **mets.xml** per a paquets d'expedients:
 ```
@@ -53,7 +54,7 @@ Per a poder fer-ne ús, abans caldrà que es configuri a iArxiu a l'ens/fons cor
 Cada petició aplica la política de securització (signa les capceleres SAML) automàticament:
 ![SoapUI Project View > WS-Security Configurations](/img/ws-security_request.PNG?raw=true "SoapUI Project View > WS-Security Configurations")
 
-Aquesta configuració inicial cal sol·licitar-la a través de suport@aoc.cat.
+En el procés d'alta al servei es donarà permisos a aquesta CDA sobre l'ens/fons creat.
 
 ## Casos d'ús
 * **Expedient_UpDown_XAdES_Detached_Zip**
