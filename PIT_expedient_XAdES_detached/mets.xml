@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><mets:mets xmlns:mets="http://www.loc.gov/METS/" TYPE="urn:iarxiu:2.0:templates:catcert:PL_expedient"><mets:dmdSec ID="DMD_md"><mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="urn:iarxiu:2.0:vocabularies:catcert:Voc_expedient"><mets:xmlData><voc:expedient xmlns:voc="http://schemas.user.iarxiu.hp.com/2.0/Voc_expedient">
+	<voc:codi_referencia>nototesav</voc:codi_referencia>
+	<voc:numero_expedient>2018-02-26T08:13:39.219</voc:numero_expedient>
+	<voc:codi_classificacio>nototesav</voc:codi_classificacio>
+	<voc:titol_serie_documental>s1</voc:titol_serie_documental>
+	<voc:nivell_descripcio>Unitat documental composta
+	</voc:nivell_descripcio>
+	<voc:titol>nototesav</voc:titol>
+	<voc:data_obertura>2009-05-08T12:07:00</voc:data_obertura>
+	<voc:data_tancament>2017-08-25T12:33:57</voc:data_tancament>
+	<voc:nom_productor>nototesav</voc:nom_productor>
+	<voc:classificacio_seguretat_acces>Accés públic</voc:classificacio_seguretat_acces>
+	<voc:identificador_volum>1</voc:identificador_volum>
+	<voc:nom_volum>nom vol</voc:nom_volum>
+	<voc:descripcio_volum>desc</voc:descripcio_volum>
+	<voc:suport_volum>1</voc:suport_volum>
+</voc:expedient></mets:xmlData></mets:mdWrap></mets:dmdSec><mets:dmdSec ID="DMD_1"><mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="urn:iarxiu:2.0:vocabularies:catcert:Voc_document_exp"><mets:xmlData><voc:document xmlns:voc="http://schemas.user.iarxiu.hp.com/2.0/Voc_document_exp">
+	<voc:codi_referencia>CodiRef</voc:codi_referencia>	
+	<voc:titol>2017-08-25T12:33:57</voc:titol>
+	<voc:data_creacio>2018-02-23T15:57:13.721</voc:data_creacio>
+	<voc:nivell_descripcio>Descripcio</voc:nivell_descripcio>
+	<voc:suport>Document</voc:suport>
+</voc:document></mets:xmlData></mets:mdWrap></mets:dmdSec><mets:dmdSec ID="DMD_10"><mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="urn:iarxiu:2.0:vocabularies:catcert:Voc_document_exp"><mets:xmlData><voc:document xmlns:voc="http://schemas.user.iarxiu.hp.com/2.0/Voc_document_exp">
+	<voc:codi_referencia>CodiRef</voc:codi_referencia>	
+	<voc:titol>2017-08-25T12:33:57</voc:titol>
+	<voc:data_creacio>2015-09-15T10:32:01</voc:data_creacio>
+	<voc:nivell_descripcio>Descripcio</voc:nivell_descripcio>
+	<voc:suport>Document</voc:suport>
+</voc:document></mets:xmlData></mets:mdWrap></mets:dmdSec><mets:dmdSec ID="DMD_2"><mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="urn:iarxiu:2.0:vocabularies:catcert:Voc_document_exp"><mets:xmlData><voc:document xmlns:voc="http://schemas.user.iarxiu.hp.com/2.0/Voc_document_exp">
+	<voc:codi_referencia>CodiRef</voc:codi_referencia>	
+	<voc:titol>2017-08-25T12:33:57</voc:titol>
+	<voc:data_creacio>2015-09-15T10:32:01</voc:data_creacio>
+	<voc:nivell_descripcio>Descripcio</voc:nivell_descripcio>
+	<voc:suport>Document</voc:suport>
+</voc:document></mets:xmlData></mets:mdWrap></mets:dmdSec><mets:dmdSec ID="DMD_3"><mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="urn:iarxiu:2.0:vocabularies:catcert:Voc_document_exp"><mets:xmlData><voc:document xmlns:voc="http://schemas.user.iarxiu.hp.com/2.0/Voc_document_exp">
+	<voc:codi_referencia>CodiRef</voc:codi_referencia>	
+	<voc:titol>2017-08-25T12:33:57</voc:titol>
+	<voc:data_creacio>2015-09-15T10:32:01</voc:data_creacio>
+	<voc:nivell_descripcio>Descripcio</voc:nivell_descripcio>
+	<voc:suport>Document</voc:suport>
+</voc:document></mets:xmlData></mets:mdWrap></mets:dmdSec><mets:dmdSec ID="DMD_4"><mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="urn:iarxiu:2.0:vocabularies:catcert:Voc_document_exp"><mets:xmlData><voc:document xmlns:voc="http://schemas.user.iarxiu.hp.com/2.0/Voc_document_exp">
+	<voc:codi_referencia>CodiRef</voc:codi_referencia>	
+	<voc:titol>2017-08-25T12:33:57</voc:titol>
+	<voc:data_creacio>2015-09-15T10:32:01</voc:data_creacio>
+	<voc:nivell_descripcio>Descripcio</voc:nivell_descripcio>
+	<voc:suport>Document</voc:suport>
+</voc:document></mets:xmlData></mets:mdWrap></mets:dmdSec><mets:dmdSec ID="DMD_5"><mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="urn:iarxiu:2.0:vocabularies:catcert:Voc_document_exp"><mets:xmlData><voc:document xmlns:voc="http://schemas.user.iarxiu.hp.com/2.0/Voc_document_exp">
+	<voc:codi_referencia>CodiRef</voc:codi_referencia>	
+	<voc:titol>2017-08-25T12:33:57</voc:titol>
+	<voc:data_creacio>2015-09-15T10:32:01</voc:data_creacio>
+	<voc:nivell_descripcio>Descripcio</voc:nivell_descripcio>
+	<voc:suport>Document</voc:suport>
+</voc:document></mets:xmlData></mets:mdWrap></mets:dmdSec><mets:dmdSec ID="DMD_6"><mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="urn:iarxiu:2.0:vocabularies:catcert:Voc_document_exp"><mets:xmlData><voc:document xmlns:voc="http://schemas.user.iarxiu.hp.com/2.0/Voc_document_exp">
+	<voc:codi_referencia>CodiRef</voc:codi_referencia>	
+	<voc:titol>2017-08-25T12:33:57</voc:titol>
+	<voc:data_creacio>2015-09-15T10:32:01</voc:data_creacio>
+	<voc:nivell_descripcio>Descripcio</voc:nivell_descripcio>
+	<voc:suport>Document</voc:suport>
+</voc:document></mets:xmlData></mets:mdWrap></mets:dmdSec><mets:dmdSec ID="DMD_7"><mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="urn:iarxiu:2.0:vocabularies:catcert:Voc_document_exp"><mets:xmlData><voc:document xmlns:voc="http://schemas.user.iarxiu.hp.com/2.0/Voc_document_exp">
+	<voc:codi_referencia>CodiRef</voc:codi_referencia>	
+	<voc:titol>2017-08-25T12:33:57</voc:titol>
+	<voc:data_creacio>2015-09-15T10:32:01</voc:data_creacio>
+	<voc:nivell_descripcio>Descripcio</voc:nivell_descripcio>
+	<voc:suport>Document</voc:suport>
+</voc:document></mets:xmlData></mets:mdWrap></mets:dmdSec><mets:dmdSec ID="DMD_8"><mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="urn:iarxiu:2.0:vocabularies:catcert:Voc_document_exp"><mets:xmlData><voc:document xmlns:voc="http://schemas.user.iarxiu.hp.com/2.0/Voc_document_exp">
+	<voc:codi_referencia>CodiRef</voc:codi_referencia>	
+	<voc:titol>2017-08-25T12:33:57</voc:titol>
+	<voc:data_creacio>2015-09-15T10:32:01</voc:data_creacio>
+	<voc:nivell_descripcio>Descripcio</voc:nivell_descripcio>
+	<voc:suport>Document</voc:suport>
+</voc:document></mets:xmlData></mets:mdWrap></mets:dmdSec><mets:dmdSec ID="DMD_9"><mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="urn:iarxiu:2.0:vocabularies:catcert:Voc_document_exp"><mets:xmlData><voc:document xmlns:voc="http://schemas.user.iarxiu.hp.com/2.0/Voc_document_exp">
+	<voc:codi_referencia>CodiRef</voc:codi_referencia>	
+	<voc:titol>2017-08-25T12:33:57</voc:titol>
+	<voc:data_creacio>2015-09-15T10:32:01</voc:data_creacio>
+	<voc:nivell_descripcio>Descripcio</voc:nivell_descripcio>
+	<voc:suport>Document</voc:suport>
+</voc:document></mets:xmlData></mets:mdWrap></mets:dmdSec><mets:amdSec ID="AMD_1"><mets:techMD ID="AMD_1.0"><mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="urn:iarxiu:2.0:vocabularies:catcert:Voc_signatura"><mets:xmlData><sig:signatura xmlns:sig="http://schemas.user.iarxiu.hp.com/2.0/Voc_signatura">
+<sig:identificador_document>BIN_1.0</sig:identificador_document>
+</sig:signatura></mets:xmlData></mets:mdWrap></mets:techMD></mets:amdSec><mets:amdSec ID="AMD_10"><mets:techMD ID="AMD_10.0"><mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="urn:iarxiu:2.0:vocabularies:catcert:Voc_signatura"><mets:xmlData><sig:signatura xmlns:sig="http://schemas.user.iarxiu.hp.com/2.0/Voc_signatura">
+<sig:identificador_document>BIN_3.0</sig:identificador_document>
+</sig:signatura></mets:xmlData></mets:mdWrap></mets:techMD></mets:amdSec><mets:amdSec ID="AMD_2"><mets:techMD ID="AMD_2.0"><mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="urn:iarxiu:2.0:vocabularies:catcert:Voc_signatura"><mets:xmlData><sig:signatura xmlns:sig="http://schemas.user.iarxiu.hp.com/2.0/Voc_signatura">
+<sig:identificador_document>BIN_5.0</sig:identificador_document>
+</sig:signatura></mets:xmlData></mets:mdWrap></mets:techMD></mets:amdSec><mets:amdSec ID="AMD_3"><mets:techMD ID="AMD_3.0"><mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="urn:iarxiu:2.0:vocabularies:catcert:Voc_signatura"><mets:xmlData><sig:signatura xmlns:sig="http://schemas.user.iarxiu.hp.com/2.0/Voc_signatura">
+<sig:identificador_document>BIN_7.0</sig:identificador_document>
+</sig:signatura></mets:xmlData></mets:mdWrap></mets:techMD></mets:amdSec><mets:amdSec ID="AMD_4"><mets:techMD ID="AMD_4.0"><mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="urn:iarxiu:2.0:vocabularies:catcert:Voc_signatura"><mets:xmlData><sig:signatura xmlns:sig="http://schemas.user.iarxiu.hp.com/2.0/Voc_signatura">
+<sig:identificador_document>BIN_9.0</sig:identificador_document>
+</sig:signatura></mets:xmlData></mets:mdWrap></mets:techMD></mets:amdSec><mets:amdSec ID="AMD_5"><mets:techMD ID="AMD_5.0"><mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="urn:iarxiu:2.0:vocabularies:catcert:Voc_signatura"><mets:xmlData><sig:signatura xmlns:sig="http://schemas.user.iarxiu.hp.com/2.0/Voc_signatura">
+<sig:identificador_document>BIN_11.0</sig:identificador_document>
+</sig:signatura></mets:xmlData></mets:mdWrap></mets:techMD></mets:amdSec><mets:amdSec ID="AMD_6"><mets:techMD ID="AMD_6.0"><mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="urn:iarxiu:2.0:vocabularies:catcert:Voc_signatura"><mets:xmlData><sig:signatura xmlns:sig="http://schemas.user.iarxiu.hp.com/2.0/Voc_signatura">
+<sig:identificador_document>BIN_13.0</sig:identificador_document>
+</sig:signatura></mets:xmlData></mets:mdWrap></mets:techMD></mets:amdSec><mets:amdSec ID="AMD_7"><mets:techMD ID="AMD_7.0"><mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="urn:iarxiu:2.0:vocabularies:catcert:Voc_signatura"><mets:xmlData><sig:signatura xmlns:sig="http://schemas.user.iarxiu.hp.com/2.0/Voc_signatura">
+<sig:identificador_document>BIN_15.0</sig:identificador_document>
+</sig:signatura></mets:xmlData></mets:mdWrap></mets:techMD></mets:amdSec><mets:amdSec ID="AMD_8"><mets:techMD ID="AMD_8.0"><mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="urn:iarxiu:2.0:vocabularies:catcert:Voc_signatura"><mets:xmlData><sig:signatura xmlns:sig="http://schemas.user.iarxiu.hp.com/2.0/Voc_signatura">
+<sig:identificador_document>BIN_17.0</sig:identificador_document>
+</sig:signatura></mets:xmlData></mets:mdWrap></mets:techMD></mets:amdSec><mets:amdSec ID="AMD_9"><mets:techMD ID="AMD_9.0"><mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="urn:iarxiu:2.0:vocabularies:catcert:Voc_signatura"><mets:xmlData><sig:signatura xmlns:sig="http://schemas.user.iarxiu.hp.com/2.0/Voc_signatura">
+<sig:identificador_document>BIN_19.0</sig:identificador_document>
+</sig:signatura></mets:xmlData></mets:mdWrap></mets:techMD></mets:amdSec><mets:fileSec><mets:fileGrp ID="BIN_1"><mets:file CHECKSUM="942d8ce29d40ce39fac193460bbeb8810bc7689d" CHECKSUMTYPE="SHA-1" CREATED="2017-08-25T12:34:16.862+02:00" ID="BIN_1.0" MIMETYPE="text/xml"><mets:FLocat xmlns:xlin="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlin:href="1/doc1.xml"/></mets:file></mets:fileGrp><mets:fileGrp ID="BIN_2"><mets:file CHECKSUM="899015c985b77d9d4718fb5a9872d8580a4cc4ff" CHECKSUMTYPE="SHA-1" CREATED="2017-08-25T12:34:16.904+02:00" ID="BIN_2.0" MIMETYPE="text/xml"><mets:FLocat xmlns:xlin="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlin:href="1/doc1.xml_signed.xml"/></mets:file></mets:fileGrp><mets:fileGrp ID="BIN_3"><mets:file CHECKSUM="942d8ce29d40ce39fac193460bbeb8810bc7689d" CHECKSUMTYPE="SHA-1" CREATED="2017-08-25T12:34:16.914+02:00" ID="BIN_3.0" MIMETYPE="text/xml"><mets:FLocat xmlns:xlin="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlin:href="10/doc10.xml"/></mets:file></mets:fileGrp><mets:fileGrp ID="BIN_4"><mets:file CHECKSUM="a99fa899314619742fa5fa46f5f507f35496a189" CHECKSUMTYPE="SHA-1" CREATED="2017-08-25T12:34:16.916+02:00" ID="BIN_4.0" MIMETYPE="text/xml"><mets:FLocat xmlns:xlin="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlin:href="10/doc10.xml_signed.xml"/></mets:file></mets:fileGrp><mets:fileGrp ID="BIN_5"><mets:file CHECKSUM="942d8ce29d40ce39fac193460bbeb8810bc7689d" CHECKSUMTYPE="SHA-1" CREATED="2017-08-25T12:34:16.923+02:00" ID="BIN_5.0" MIMETYPE="text/xml"><mets:FLocat xmlns:xlin="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlin:href="2/doc2.xml"/></mets:file></mets:fileGrp><mets:fileGrp ID="BIN_6"><mets:file CHECKSUM="dbe76afba12ee93cdceae0a5c39e5208733c331b" CHECKSUMTYPE="SHA-1" CREATED="2017-08-25T12:34:16.925+02:00" ID="BIN_6.0" MIMETYPE="text/xml"><mets:FLocat xmlns:xlin="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlin:href="2/doc2.xml_signed.xml"/></mets:file></mets:fileGrp><mets:fileGrp ID="BIN_7"><mets:file CHECKSUM="942d8ce29d40ce39fac193460bbeb8810bc7689d" CHECKSUMTYPE="SHA-1" CREATED="2017-08-25T12:34:16.937+02:00" ID="BIN_7.0" MIMETYPE="text/xml"><mets:FLocat xmlns:xlin="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlin:href="3/doc3.xml"/></mets:file></mets:fileGrp><mets:fileGrp ID="BIN_8"><mets:file CHECKSUM="0f1148763c3a6b2068addf8444655165b3c35160" CHECKSUMTYPE="SHA-1" CREATED="2017-08-25T12:34:16.939+02:00" ID="BIN_8.0" MIMETYPE="text/xml"><mets:FLocat xmlns:xlin="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlin:href="3/doc3.xml_signed.xml"/></mets:file></mets:fileGrp><mets:fileGrp ID="BIN_9"><mets:file CHECKSUM="942d8ce29d40ce39fac193460bbeb8810bc7689d" CHECKSUMTYPE="SHA-1" CREATED="2017-08-25T12:34:16.953+02:00" ID="BIN_9.0" MIMETYPE="text/xml"><mets:FLocat xmlns:xlin="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlin:href="4/doc4.xml"/></mets:file></mets:fileGrp><mets:fileGrp ID="BIN_10"><mets:file CHECKSUM="2f09a4dbe785b9f9fee7f849ce1f15f755403d5a" CHECKSUMTYPE="SHA-1" CREATED="2017-08-25T12:34:16.955+02:00" ID="BIN_10.0" MIMETYPE="text/xml"><mets:FLocat xmlns:xlin="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlin:href="4/doc4.xml_signed.xml"/></mets:file></mets:fileGrp><mets:fileGrp ID="BIN_11"><mets:file CHECKSUM="942d8ce29d40ce39fac193460bbeb8810bc7689d" CHECKSUMTYPE="SHA-1" CREATED="2017-08-25T12:34:16.965+02:00" ID="BIN_11.0" MIMETYPE="text/xml"><mets:FLocat xmlns:xlin="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlin:href="5/doc5.xml"/></mets:file></mets:fileGrp><mets:fileGrp ID="BIN_12"><mets:file CHECKSUM="53a1c2a08216cd1df997989db781c0ead3d87037" CHECKSUMTYPE="SHA-1" CREATED="2017-08-25T12:34:16.967+02:00" ID="BIN_12.0" MIMETYPE="text/xml"><mets:FLocat xmlns:xlin="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlin:href="5/doc5.xml_signed.xml"/></mets:file></mets:fileGrp><mets:fileGrp ID="BIN_13"><mets:file CHECKSUM="942d8ce29d40ce39fac193460bbeb8810bc7689d" CHECKSUMTYPE="SHA-1" CREATED="2017-08-25T12:34:16.976+02:00" ID="BIN_13.0" MIMETYPE="text/xml"><mets:FLocat xmlns:xlin="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlin:href="6/doc6.xml"/></mets:file></mets:fileGrp><mets:fileGrp ID="BIN_14"><mets:file CHECKSUM="d7f1bdc44f4ea79beb8f4d53ab42b657f9ff5f44" CHECKSUMTYPE="SHA-1" CREATED="2017-08-25T12:34:16.980+02:00" ID="BIN_14.0" MIMETYPE="text/xml"><mets:FLocat xmlns:xlin="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlin:href="6/doc6.xml_signed.xml"/></mets:file></mets:fileGrp><mets:fileGrp ID="BIN_15"><mets:file CHECKSUM="942d8ce29d40ce39fac193460bbeb8810bc7689d" CHECKSUMTYPE="SHA-1" CREATED="2017-08-25T12:34:16.991+02:00" ID="BIN_15.0" MIMETYPE="text/xml"><mets:FLocat xmlns:xlin="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlin:href="7/doc7.xml"/></mets:file></mets:fileGrp><mets:fileGrp ID="BIN_16"><mets:file CHECKSUM="68b17487387078a8f0d0ee2cb5ec0b30f56b7faf" CHECKSUMTYPE="SHA-1" CREATED="2017-08-25T12:34:16.993+02:00" ID="BIN_16.0" MIMETYPE="text/xml"><mets:FLocat xmlns:xlin="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlin:href="7/doc7.xml_signed.xml"/></mets:file></mets:fileGrp><mets:fileGrp ID="BIN_17"><mets:file CHECKSUM="942d8ce29d40ce39fac193460bbeb8810bc7689d" CHECKSUMTYPE="SHA-1" CREATED="2017-08-25T12:34:17.015+02:00" ID="BIN_17.0" MIMETYPE="text/xml"><mets:FLocat xmlns:xlin="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlin:href="8/doc8.xml"/></mets:file></mets:fileGrp><mets:fileGrp ID="BIN_18"><mets:file CHECKSUM="354c3afe21135d1ab649ed9cad3dbba59a166b9f" CHECKSUMTYPE="SHA-1" CREATED="2017-08-25T12:34:17.016+02:00" ID="BIN_18.0" MIMETYPE="text/xml"><mets:FLocat xmlns:xlin="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlin:href="8/doc8.xml_signed.xml"/></mets:file></mets:fileGrp><mets:fileGrp ID="BIN_19"><mets:file CHECKSUM="942d8ce29d40ce39fac193460bbeb8810bc7689d" CHECKSUMTYPE="SHA-1" CREATED="2017-08-25T12:34:17.100+02:00" ID="BIN_19.0" MIMETYPE="text/xml"><mets:FLocat xmlns:xlin="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlin:href="9/doc9.xml"/></mets:file></mets:fileGrp><mets:fileGrp ID="BIN_20"><mets:file CHECKSUM="2dec2b3d59c61ace17fce973b208176986650776" CHECKSUMTYPE="SHA-1" CREATED="2017-08-25T12:34:17.102+02:00" ID="BIN_20.0" MIMETYPE="text/xml"><mets:FLocat xmlns:xlin="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlin:href="9/doc9.xml_signed.xml"/></mets:file></mets:fileGrp></mets:fileSec><mets:structMap><mets:div DMDID="DMD_md" LABEL="MD_expedient"><mets:div DMDID="DMD_1" LABEL="sub_expedient"><mets:div LABEL="doc1.xml"><mets:fptr FILEID="BIN_1"/></mets:div><mets:div ADMID="AMD_1" LABEL="doc1.xml_signed.xml"><mets:fptr FILEID="BIN_2"/></mets:div></mets:div><mets:div DMDID="DMD_10" LABEL="sub_expedient"><mets:div LABEL="doc10.xml"><mets:fptr FILEID="BIN_3"/></mets:div><mets:div ADMID="AMD_10" LABEL="doc10.xml_signed.xml"><mets:fptr FILEID="BIN_4"/></mets:div></mets:div><mets:div DMDID="DMD_2" LABEL="sub_expedient"><mets:div LABEL="doc2.xml"><mets:fptr FILEID="BIN_5"/></mets:div><mets:div ADMID="AMD_2" LABEL="doc2.xml_signed.xml"><mets:fptr FILEID="BIN_6"/></mets:div></mets:div><mets:div DMDID="DMD_3" LABEL="sub_expedient"><mets:div LABEL="doc3.xml"><mets:fptr FILEID="BIN_7"/></mets:div><mets:div ADMID="AMD_3" LABEL="doc3.xml_signed.xml"><mets:fptr FILEID="BIN_8"/></mets:div></mets:div><mets:div DMDID="DMD_4" LABEL="sub_expedient"><mets:div LABEL="doc4.xml"><mets:fptr FILEID="BIN_9"/></mets:div><mets:div ADMID="AMD_4" LABEL="doc4.xml_signed.xml"><mets:fptr FILEID="BIN_10"/></mets:div></mets:div><mets:div DMDID="DMD_5" LABEL="sub_expedient"><mets:div LABEL="doc5.xml"><mets:fptr FILEID="BIN_11"/></mets:div><mets:div ADMID="AMD_5" LABEL="doc5.xml_signed.xml"><mets:fptr FILEID="BIN_12"/></mets:div></mets:div><mets:div DMDID="DMD_6" LABEL="sub_expedient"><mets:div LABEL="doc6.xml"><mets:fptr FILEID="BIN_13"/></mets:div><mets:div ADMID="AMD_6" LABEL="doc6.xml_signed.xml"><mets:fptr FILEID="BIN_14"/></mets:div></mets:div><mets:div DMDID="DMD_7" LABEL="sub_expedient"><mets:div LABEL="doc7.xml"><mets:fptr FILEID="BIN_15"/></mets:div><mets:div ADMID="AMD_7" LABEL="doc7.xml_signed.xml"><mets:fptr FILEID="BIN_16"/></mets:div></mets:div><mets:div DMDID="DMD_8" LABEL="sub_expedient"><mets:div LABEL="doc8.xml"><mets:fptr FILEID="BIN_17"/></mets:div><mets:div ADMID="AMD_8" LABEL="doc8.xml_signed.xml"><mets:fptr FILEID="BIN_18"/></mets:div></mets:div><mets:div DMDID="DMD_9" LABEL="sub_expedient"><mets:div LABEL="doc9.xml"><mets:fptr FILEID="BIN_19"/></mets:div><mets:div ADMID="AMD_9" LABEL="doc9.xml_signed.xml"><mets:fptr FILEID="BIN_20"/></mets:div></mets:div></mets:div></mets:structMap></mets:mets>

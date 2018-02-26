@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://schemas.core.iarxiu.hp.com/2.0/ingest" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:sch="http://schemas.core.iarxiu.hp.com/2.0/ingest" targetNamespace="http://schemas.core.iarxiu.hp.com/2.0/ingest">
+  <wsdl:types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.core.iarxiu.hp.com/2.0/ingest" xmlns:METS="http://www.loc.gov/METS/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.core.iarxiu.hp.com/2.0/ingest"><xsd:import namespace="http://www.loc.gov/METS/" schemaLocation="mets.xsd"/><xsd:element name="IngestRequest"><xsd:complexType><xsd:sequence><xsd:element ref="METS:mets"/><xsd:element name="preservation" type="xsd:boolean"/><xsd:element name="contentTypeHandling" type="contentTypeHandlingType"/><xsd:element minOccurs="0" name="signatureValidationDetails" type="xsd:boolean"/></xsd:sequence></xsd:complexType></xsd:element><xsd:element name="IngestResponse"><xsd:complexType><xsd:sequence><xsd:element name="ingestInfo" type="ingestInfoType"/></xsd:sequence></xsd:complexType></xsd:element><xsd:element name="ZipIngestRequest"><xsd:complexType><xsd:sequence><xsd:element name="zipFile" type="xsd:base64Binary"/><xsd:element name="preservation" type="xsd:boolean"/><xsd:element name="contentTypeHandling" type="contentTypeHandlingType"/><xsd:element minOccurs="0" name="signatureValidationDetails" type="xsd:boolean"/></xsd:sequence></xsd:complexType></xsd:element><xsd:element name="ZipIngestResponse"><xsd:complexType><xsd:sequence><xsd:element name="ingestInfo" type="ingestInfoType"/></xsd:sequence></xsd:complexType></xsd:element><xsd:simpleType name="contentTypeHandlingType"><xsd:restriction base="xsd:string"><xsd:enumeration value="replaceWithIntrospection"/><xsd:enumeration value="completeWithIntrospection"/><xsd:enumeration value="checkAndReject"/></xsd:restriction></xsd:simpleType><xsd:element name="OfflineIngestRequest"><xsd:complexType><xsd:sequence><xsd:element ref="METS:mets"/><xsd:element name="preservation" type="xsd:boolean"/><xsd:element name="contentTypeHandling" type="contentTypeHandlingType"/></xsd:sequence></xsd:complexType></xsd:element><xsd:element name="OfflineIngestResponse" type="xsd:string"/><xsd:element name="OfflineZipIngestRequest"><xsd:complexType><xsd:sequence><xsd:element name="zipFile" type="xsd:base64Binary"/><xsd:element name="preservation" type="xsd:boolean"/><xsd:element name="contentTypeHandling" type="contentTypeHandlingType"/></xsd:sequence></xsd:complexType></xsd:element><xsd:element name="OfflineZipIngestResponse" type="xsd:string"/><xsd:element name="GetOfflineIngestStatusRequest"><xsd:complexType><xsd:simpleContent><xsd:extension base="xsd:string"><xsd:attribute default="false" name="signatureValidationDetails" type="xsd:boolean" use="optional"/></xsd:extension></xsd:simpleContent></xsd:complexType></xsd:element><xsd:element name="GetOfflineIngestStatusResponse"><xsd:complexType><xsd:sequence><xsd:element name="offlineIngestInfo" type="offlineIngestInfoType"/></xsd:sequence></xsd:complexType></xsd:element><xsd:element name="OfflineUploadIngestRequest"><xsd:complexType><xsd:sequence><xsd:element name="uploadTicket" type="xsd:string"/><xsd:element name="preservation" type="xsd:boolean"/><xsd:element name="contentTypeHandling" type="contentTypeHandlingType"/></xsd:sequence></xsd:complexType></xsd:element><xsd:element name="OfflineUploadIngestResponse" type="xsd:string"/><xsd:complexType name="offlineIngestInfoType"><xsd:sequence><xsd:element name="status"><xsd:simpleType><xsd:restriction base="xsd:string"><xsd:enumeration value="ok"/><xsd:enumeration value="error"/><xsd:enumeration value="inProcess"/><xsd:enumeration value="unknown"/><xsd:enumeration value="okInvalidSignatures"/></xsd:restriction></xsd:simpleType></xsd:element><xsd:element minOccurs="0" name="errorCode" type="xsd:string"/><xsd:element minOccurs="0" name="id" type="xsd:string"/><xsd:element minOccurs="0" name="preservedSignatures" type="preservedSignaturesType"/><xsd:element minOccurs="0" name="signatureValidationDetail" type="signatureValidationDetailType"/></xsd:sequence></xsd:complexType><xsd:complexType name="ingestInfoType"><xsd:sequence><xsd:element name="id" type="xsd:string"/><xsd:element minOccurs="0" name="preservedSignatures" type="preservedSignaturesType"/><xsd:element minOccurs="0" name="signatureValidationDetail" type="signatureValidationDetailType"/></xsd:sequence></xsd:complexType><xsd:simpleType name="preservedSignaturesType"><xsd:restriction base="xsd:string"><xsd:enumeration value="all"/><xsd:enumeration value="onlyAdvanced"/><xsd:enumeration value="none"/></xsd:restriction></xsd:simpleType><xsd:element name="GetUploadTicketRequest"><xsd:complexType/></xsd:element><xsd:element name="GetUploadTicketResponse"><xsd:complexType><xsd:sequence><xsd:element name="ticket" type="xsd:string"><xsd:annotation><xsd:documentation>Ticket identifier for doing uploads</xsd:documentation></xsd:annotation></xsd:element></xsd:sequence></xsd:complexType></xsd:element><xsd:complexType name="invalidSignatureType"><xsd:sequence><xsd:element name="idSignature" type="xsd:string"/><xsd:element name="reason" type="xsd:string"/></xsd:sequence></xsd:complexType><xsd:complexType name="invalidSignature"><xsd:sequence><xsd:element name="invalidSignature" type="invalidSignatureType"/></xsd:sequence></xsd:complexType><xsd:complexType name="preservedSignature"><xsd:sequence><xsd:element maxOccurs="unbounded" name="preservedSignature" type="xsd:string"/></xsd:sequence></xsd:complexType><xsd:complexType name="nonPreservedSignature"><xsd:sequence><xsd:element name="nonPreservedSignature" type="xsd:string"/></xsd:sequence></xsd:complexType><xsd:complexType name="signatureValidationDetailType"><xsd:sequence><xsd:element minOccurs="0" name="preservedSignatures" type="preservedSignatures"/><xsd:element minOccurs="0" name="nonPreservedSignatures" type="nonPreservedSignatures"/><xsd:element minOccurs="0" name="invalidSignatures" type="invalidSignatures"/></xsd:sequence></xsd:complexType><xsd:complexType name="preservedSignatures"><xsd:sequence><xsd:element maxOccurs="unbounded" name="preservedSignature" type="xsd:string"/></xsd:sequence></xsd:complexType><xsd:complexType name="nonPreservedSignatures"><xsd:sequence><xsd:element maxOccurs="unbounded" name="nonPreservedSignature" type="xsd:string"/></xsd:sequence></xsd:complexType><xsd:complexType name="invalidSignatures"><xsd:sequence><xsd:element maxOccurs="unbounded" name="invalidSignature" type="invalidSignatureType"/></xsd:sequence></xsd:complexType></xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZipIngestResponse">
+    <wsdl:part element="tns:ZipIngestResponse" name="ZipIngestResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetUploadTicketResponse">
+    <wsdl:part element="tns:GetUploadTicketResponse" name="GetUploadTicketResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="IngestResponse">
+    <wsdl:part element="tns:IngestResponse" name="IngestResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="OfflineUploadIngestRequest">
+    <wsdl:part element="tns:OfflineUploadIngestRequest" name="OfflineUploadIngestRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetOfflineIngestStatusRequest">
+    <wsdl:part element="tns:GetOfflineIngestStatusRequest" name="GetOfflineIngestStatusRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="OfflineIngestResponse">
+    <wsdl:part element="tns:OfflineIngestResponse" name="OfflineIngestResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetOfflineIngestStatusResponse">
+    <wsdl:part element="tns:GetOfflineIngestStatusResponse" name="GetOfflineIngestStatusResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="OfflineIngestRequest">
+    <wsdl:part element="tns:OfflineIngestRequest" name="OfflineIngestRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="OfflineZipIngestResponse">
+    <wsdl:part element="tns:OfflineZipIngestResponse" name="OfflineZipIngestResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="OfflineZipIngestRequest">
+    <wsdl:part element="tns:OfflineZipIngestRequest" name="OfflineZipIngestRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="IngestRequest">
+    <wsdl:part element="tns:IngestRequest" name="IngestRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="OfflineUploadIngestResponse">
+    <wsdl:part element="tns:OfflineUploadIngestResponse" name="OfflineUploadIngestResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetUploadTicketRequest">
+    <wsdl:part element="tns:GetUploadTicketRequest" name="GetUploadTicketRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ZipIngestRequest">
+    <wsdl:part element="tns:ZipIngestRequest" name="ZipIngestRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Ingest">
+    <wsdl:operation name="ZipIngest">
+      <wsdl:input message="tns:ZipIngestRequest" name="ZipIngestRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:ZipIngestResponse" name="ZipIngestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OfflineIngest">
+      <wsdl:input message="tns:OfflineIngestRequest" name="OfflineIngestRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:OfflineIngestResponse" name="OfflineIngestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OfflineUploadIngest">
+      <wsdl:input message="tns:OfflineUploadIngestRequest" name="OfflineUploadIngestRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:OfflineUploadIngestResponse" name="OfflineUploadIngestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OfflineZipIngest">
+      <wsdl:input message="tns:OfflineZipIngestRequest" name="OfflineZipIngestRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:OfflineZipIngestResponse" name="OfflineZipIngestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOfflineIngestStatus">
+      <wsdl:input message="tns:GetOfflineIngestStatusRequest" name="GetOfflineIngestStatusRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:GetOfflineIngestStatusResponse" name="GetOfflineIngestStatusResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ingest">
+      <wsdl:input message="tns:IngestRequest" name="IngestRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:IngestResponse" name="IngestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUploadTicket">
+      <wsdl:input message="tns:GetUploadTicketRequest" name="GetUploadTicketRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:GetUploadTicketResponse" name="GetUploadTicketResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IngestSoap11" type="tns:Ingest">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ZipIngest">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="ZipIngestRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ZipIngestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OfflineIngest">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="OfflineIngestRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="OfflineIngestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OfflineUploadIngest">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="OfflineUploadIngestRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="OfflineUploadIngestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OfflineZipIngest">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="OfflineZipIngestRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="OfflineZipIngestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOfflineIngestStatus">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="GetOfflineIngestStatusRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetOfflineIngestStatusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ingest">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="IngestRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="IngestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUploadTicket">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="GetUploadTicketRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetUploadTicketResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IngestService">
+    <wsdl:port binding="tns:IngestSoap11" name="IngestSoap11">
+      <soap:address location="https://www.preproduccio.iarxiu.cat/core/soap"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

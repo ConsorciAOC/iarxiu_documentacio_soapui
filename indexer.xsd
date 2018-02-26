@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.core.iarxiu.hp.com/2.0/indexer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="http://schemas.core.iarxiu.hp.com/2.0/indexer">
+  <xsd:complexType name="SearchType">
+    <xsd:choice>
+      <xsd:element name="target" type="TargetType"/>
+      <xsd:element name="or" type="OrOperatorType"/>
+      <xsd:element name="and" type="AndOperatorType"/>
+    </xsd:choice>
+    <xsd:attribute name="name" type="xsd:string" use="optional"/>
+  </xsd:complexType>
+  <xsd:element name="search" type="SearchType"/>
+  <xsd:complexType name="ConditionType"/>
+  <xsd:complexType name="EqualsConditionType">
+    <xsd:complexContent>
+      <xsd:extension base="ConditionType">
+        <xsd:sequence>
+          <xsd:element name="value" type="MetadataValue"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="NotEqualsConditionType">
+    <xsd:complexContent>
+      <xsd:extension base="ConditionType">
+        <xsd:sequence>
+          <xsd:element name="value" type="MetadataValue"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="LikeConditionType">
+    <xsd:complexContent>
+      <xsd:extension base="ConditionType">
+        <xsd:sequence>
+          <xsd:element name="value" type="MetadataValue"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="LessConditionType">
+    <xsd:complexContent>
+      <xsd:extension base="ConditionType">
+        <xsd:sequence>
+          <xsd:element name="value" type="MetadataValue"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="LessOrEqualsConditionType">
+    <xsd:complexContent>
+      <xsd:extension base="ConditionType">
+        <xsd:sequence>
+          <xsd:element name="value" type="MetadataValue"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GreaterConditionType">
+    <xsd:complexContent>
+      <xsd:extension base="ConditionType">
+        <xsd:sequence>
+          <xsd:element name="value" type="MetadataValue"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GreaterOrEqualsConditionType">
+    <xsd:complexContent>
+      <xsd:extension base="ConditionType">
+        <xsd:sequence>
+          <xsd:element name="value" type="MetadataValue"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MetadataValue">
+    <xsd:choice>
+      <xsd:element name="string" type="xsd:string"/>
+      <xsd:element name="float" type="xsd:float"/>
+      <xsd:element name="date" type="xsd:dateTime"/>
+      <xsd:element name="int" type="xsd:int"/>
+      <xsd:element name="boolean" type="xsd:boolean"/>
+    </xsd:choice>
+  </xsd:complexType>
+  <xsd:complexType name="TargetType">
+    <xsd:choice>
+      <xsd:element name="equals" type="EqualsConditionType"/>
+      <xsd:element name="notEquals" type="NotEqualsConditionType"/>
+      <xsd:element name="like" type="LikeConditionType"/>
+      <xsd:element name="less" type="LessConditionType"/>
+      <xsd:element name="lessOrEquals" type="LessOrEqualsConditionType"/>
+      <xsd:element name="greater" type="GreaterConditionType"/>
+      <xsd:element name="greaterOrEquals" type="GreaterOrEqualsConditionType"/>
+      <xsd:element name="between" type="BetweenConditionType"/>
+    </xsd:choice>
+    <xsd:attribute name="vocabularyURN" type="xsd:string" use="required"/>
+    <xsd:attribute name="name" type="xsd:string" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="OperatorType"/>
+  <xsd:complexType name="OrOperatorType">
+    <xsd:complexContent>
+      <xsd:extension base="OperatorType">
+        <xsd:sequence maxOccurs="unbounded">
+          <xsd:element name="target" type="TargetType" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="or" type="OrOperatorType"/>
+            <xsd:element name="and" type="AndOperatorType"/>
+          </xsd:choice>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AndOperatorType">
+    <xsd:complexContent>
+      <xsd:extension base="OperatorType">
+        <xsd:sequence maxOccurs="unbounded">
+          <xsd:element name="target" type="TargetType"/>
+          <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="and" type="AndOperatorType"/>
+            <xsd:element name="or" type="OrOperatorType"/>
+          </xsd:choice>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="BetweenConditionType">
+    <xsd:complexContent>
+      <xsd:extension base="ConditionType">
+        <xsd:sequence>
+          <xsd:element name="from" type="MetadataValue"/>
+          <xsd:element name="to" type="MetadataValue"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,410 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:tns="http://schemas.core.iarxiu.hp.com/2.0/dissemination"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:sch="http://schemas.core.iarxiu.hp.com/2.0/dissemination"
+	targetNamespace="http://schemas.core.iarxiu.hp.com/2.0/dissemination">
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns="http://schemas.core.iarxiu.hp.com/2.0/dissemination"
+			xmlns:IDX="http://schemas.core.iarxiu.hp.com/2.0/indexer" xmlns:AMD="http://schemas.core.iarxiu.hp.com/2.0/packageAMD"
+			xmlns:METS="http://www.loc.gov/METS/" attributeFormDefault="qualified"
+			elementFormDefault="qualified"
+			targetNamespace="http://schemas.core.iarxiu.hp.com/2.0/dissemination">
+			<xsd:import namespace="http://schemas.core.iarxiu.hp.com/2.0/indexer"
+				schemaLocation="indexer.xsd" />
+			<xsd:import namespace="http://schemas.core.iarxiu.hp.com/2.0/packageAMD"
+				schemaLocation="packageAMD.xsd" />
+			<xsd:import namespace="http://www.loc.gov/METS/"
+				schemaLocation="mets.xsd" />
+			<xsd:element name="FindRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="IDX:search" />
+						<xsd:element name="maxSearchResults" type="xsd:int" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="FindResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="unbounded" ref="AMD:amd" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="FindIDsRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="IDX:search" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="FindIDsResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element maxOccurs="unbounded" name="id" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetPackageRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="packageId" type="xsd:string" />
+						<xsd:element name="includeDC" type="xsd:boolean" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetPackageResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="METS:mets" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetPackageUrlRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="packageId" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetPackageUrlResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="packageUrl" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetBinaryRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="packageId" type="xsd:string" />
+						<xsd:element name="binaryId" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetBinaryResponse" type="binaryType" />
+			<xsd:element name="GetMDRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="packageId" type="xsd:string" />
+						<xsd:element name="metadataId" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetMDResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:any />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetZipPackageRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="packageId" type="xsd:string" />
+						<xsd:element name="includeDC" type="xsd:boolean" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetZipPackageResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="packageDownloadTicket" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetEvidenceReportRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="packageId" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetEvidenceReportResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="report" type="xsd:base64Binary" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="binaryType">
+				<xsd:sequence>
+					<xsd:element name="binDataDownloadTicket" type="xsd:string" />
+					<xsd:element name="contentType" type="xsd:string" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="MigrateBinaryRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="packageId" type="xsd:string" />
+						<xsd:element name="binaryId" type="xsd:string" />
+						<xsd:element name="toFormat" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="MigrateBinaryResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="contentDownloadTicket" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetAuthenticCopyRequest">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="packageId" type="xsd:string" />
+						<xsd:element name="binaryId" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetAuthenticCopyResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="contentDownloadTicket" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="FindResponse">
+		<wsdl:part element="tns:FindResponse" name="FindResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="FindIDsRequest">
+		<wsdl:part element="tns:FindIDsRequest" name="FindIDsRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GetBinaryRequest">
+		<wsdl:part element="tns:GetBinaryRequest" name="GetBinaryRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GetZipPackageResponse">
+		<wsdl:part element="tns:GetZipPackageResponse" name="GetZipPackageResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GetBinaryResponse">
+		<wsdl:part element="tns:GetBinaryResponse" name="GetBinaryResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GetZipPackageRequest">
+		<wsdl:part element="tns:GetZipPackageRequest" name="GetZipPackageRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GetEvidenceReportRequest">
+		<wsdl:part element="tns:GetEvidenceReportRequest" name="GetEvidenceReportRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GetPackageResponse">
+		<wsdl:part element="tns:GetPackageResponse" name="GetPackageResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GetPackageUrlResponse">
+		<wsdl:part element="tns:GetPackageUrlResponse" name="GetPackageUrlResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="MigrateBinaryResponse">
+		<wsdl:part element="tns:MigrateBinaryResponse" name="MigrateBinaryResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GetAuthenticCopyRequest">
+		<wsdl:part element="tns:GetAuthenticCopyRequest" name="GetAuthenticCopyRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="FindIDsResponse">
+		<wsdl:part element="tns:FindIDsResponse" name="FindIDsResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="FindRequest">
+		<wsdl:part element="tns:FindRequest" name="FindRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GetAuthenticCopyResponse">
+		<wsdl:part element="tns:GetAuthenticCopyResponse" name="GetAuthenticCopyResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GetEvidenceReportResponse">
+		<wsdl:part element="tns:GetEvidenceReportResponse" name="GetEvidenceReportResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GetMDResponse">
+		<wsdl:part element="tns:GetMDResponse" name="GetMDResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="MigrateBinaryRequest">
+		<wsdl:part element="tns:MigrateBinaryRequest" name="MigrateBinaryRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GetPackageRequest">
+		<wsdl:part element="tns:GetPackageRequest" name="GetPackageRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GetPackageUrlRequest">
+		<wsdl:part element="tns:GetPackageUrlRequest" name="GetPackageUrlRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GetMDRequest">
+		<wsdl:part element="tns:GetMDRequest" name="GetMDRequest">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="Dissemination">
+		<wsdl:operation name="GetMD">
+			<wsdl:input message="tns:GetMDRequest" name="GetMDRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:GetMDResponse" name="GetMDResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="MigrateBinary">
+			<wsdl:input message="tns:MigrateBinaryRequest" name="MigrateBinaryRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:MigrateBinaryResponse" name="MigrateBinaryResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Find">
+			<wsdl:input message="tns:FindRequest" name="FindRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:FindResponse" name="FindResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetPackage">
+			<wsdl:input message="tns:GetPackageRequest" name="GetPackageRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:GetPackageResponse" name="GetPackageResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetPackageUrl">
+			<wsdl:input message="tns:GetPackageUrlRequest" name="GetPackageUrlRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:GetPackageUrlResponse" name="GetPackageUrlResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetBinary">
+			<wsdl:input message="tns:GetBinaryRequest" name="GetBinaryRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:GetBinaryResponse" name="GetBinaryResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetAuthenticCopy">
+			<wsdl:input message="tns:GetAuthenticCopyRequest" name="GetAuthenticCopyRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:GetAuthenticCopyResponse" name="GetAuthenticCopyResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetEvidenceReport">
+			<wsdl:input message="tns:GetEvidenceReportRequest" name="GetEvidenceReportRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:GetEvidenceReportResponse"
+				name="GetEvidenceReportResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="FindIDs">
+			<wsdl:input message="tns:FindIDsRequest" name="FindIDsRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:FindIDsResponse" name="FindIDsResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetZipPackage">
+			<wsdl:input message="tns:GetZipPackageRequest" name="GetZipPackageRequest">
+			</wsdl:input>
+			<wsdl:output message="tns:GetZipPackageResponse" name="GetZipPackageResponse">
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="DisseminationSoap11" type="tns:Dissemination">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="GetMD">
+			<soap:operation soapAction="" />
+			<wsdl:input name="GetMDRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="GetMDResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="MigrateBinary">
+			<soap:operation soapAction="" />
+			<wsdl:input name="MigrateBinaryRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="MigrateBinaryResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Find">
+			<soap:operation soapAction="" />
+			<wsdl:input name="FindRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="FindResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetPackage">
+			<soap:operation soapAction="" />
+			<wsdl:input name="GetPackageRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="GetPackageResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetPackageUrl">
+			<soap:operation soapAction="" />
+			<wsdl:input name="GetPackageUrlRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="GetPackageUrlResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetBinary">
+			<soap:operation soapAction="" />
+			<wsdl:input name="GetBinaryRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="GetBinaryResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetAuthenticCopy">
+			<soap:operation soapAction="" />
+			<wsdl:input name="GetAuthenticCopyRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="GetAuthenticCopyResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetEvidenceReport">
+			<soap:operation soapAction="" />
+			<wsdl:input name="GetEvidenceReportRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="GetEvidenceReportResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="FindIDs">
+			<soap:operation soapAction="" />
+			<wsdl:input name="FindIDsRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="FindIDsResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetZipPackage">
+			<soap:operation soapAction="" />
+			<wsdl:input name="GetZipPackageRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="GetZipPackageResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="DisseminationService">
+		<wsdl:port binding="tns:DisseminationSoap11" name="DisseminationSoap11">
+			<soap:address location="https://www.preproduccio.iarxiu.cat/core/soap" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

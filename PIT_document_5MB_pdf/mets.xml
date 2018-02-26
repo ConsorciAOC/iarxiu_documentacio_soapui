@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><mets:mets xmlns:mets="http://www.loc.gov/METS/" TYPE="urn:iarxiu:2.0:templates:catcert:PL_document">
+	<mets:dmdSec ID="DMD_1">
+		<mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="urn:iarxiu:2.0:vocabularies:catcert:Voc_document">
+			<mets:xmlData>
+				<voc:document xmlns:voc="http://schemas.user.iarxiu.hp.com/2.0/Voc_document">
+					<voc:codi_referencia>CodiRef_pdf</voc:codi_referencia>
+					<voc:codi_classificacio>CodiClassificacio_pdf</voc:codi_classificacio>	
+					<voc:titol_serie_documental>TitolSerieDoc_pdf</voc:titol_serie_documental>
+					<voc:titol>2018-02-26T08:16:55.036</voc:titol>
+					<voc:data_creacio>2015-05-11T12:07:00</voc:data_creacio>
+					<voc:nivell_descripcio>Descripcio</voc:nivell_descripcio>
+					<voc:suport>Document</voc:suport>
+				</voc:document>
+			</mets:xmlData>
+		</mets:mdWrap>
+	</mets:dmdSec>
+	<mets:fileSec>
+		<mets:fileGrp ID="BIN_1">
+			<mets:file CHECKSUM="07fec2e85710470e6ca5bf7b9771272053f8d9ce" CHECKSUMTYPE="SHA-1" CREATED="2015-09-18T09:39:48.946+02:00" ID="BIN_1.0" MIMETYPE="application/pdf">
+				<mets:FLocat xmlns:xlin="http://www.w3.org/1999/xlink" LOCTYPE="URL" xlin:href="pdf_5MB_signed.pdf"/>
+			</mets:file>
+		</mets:fileGrp>
+	</mets:fileSec>
+	<mets:structMap>
+		<mets:div DMDID="DMD_1" LABEL="MD_document">
+			<mets:div LABEL="pdf_5MB_signed.pdf">
+				<mets:fptr FILEID="BIN_1"/>
+			</mets:div>
+		</mets:div>
+	</mets:structMap>
+</mets:mets>

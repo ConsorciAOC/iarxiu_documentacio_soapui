@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.core.iarxiu.hp.com/2.0/packageAMD" targetNamespace="http://schemas.core.iarxiu.hp.com/2.0/packageAMD" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xsd:complexType name="amdType">
+    <xsd:sequence>
+      <xsd:element name="packageID" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="URN" type="xsd:string"/>
+      <xsd:element name="organization" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="fonds" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="templateURN" type="xsd:string"/>
+      <xsd:element name="preservation" type="xsd:boolean" minOccurs="0"/>
+      <xsd:element name="lastStampDate" type="xsd:dateTime" minOccurs="0"/>
+      <xsd:element name="ingestTA" type="xsd:string"/>
+      <xsd:element name="ingestUser" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="ingestDateTime" type="xsd:dateTime"/>
+      <xsd:element name="lastModifUser" type="xsd:string" minOccurs="0"/>
+      <xsd:element name="lastModifDate" type="xsd:dateTime" minOccurs="0"/>
+      <xsd:element name="name" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>nom de vocabulari o plantilla</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="description" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>descripció de vocabulari o plantilla</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="openingDate" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>data_obertura d'expedient o document</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="closingDate" type="xsd:dateTime" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>data_tancament d'expedient o document</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="referenceCode" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>codi_referència d'expedient o document</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="fileNumber" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>numero_expedient</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="seriesTitle" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>titol_serie_documental d'expedient o document</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="title" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>títol d'expedient o document</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+       <xsd:element name="status" type="xsd:int" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>estat de vocabulari o plantilla (0: desactivat, 1: activat)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="amd" type="amdType"/>
+</xsd:schema>
