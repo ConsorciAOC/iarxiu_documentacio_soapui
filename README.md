@@ -23,6 +23,22 @@ packageIdDoc=
 
 ![SoapUI Project View > Overview > LoadScript](/img/loadscript.PNG?raw=true "SoapUI Project View > Overview > LoadScript")
 
+3. Els fitxers mets.xml fan ús de plantilles (on es defineixen els vocabularis permesos per construir les metadades). El primer cas d'ús (Expedient_UpDown_XAdES_Detached_Zip) fa ús de la plantilla urn:iarxiu:2.0:templates:catcert:PL_expedient. Els altres dos casos fan servir la urn:iarxiu:2.0:templates:catcert:PL_document.
+Aquestes plantilles han d'estar carregades a l'ens/fons a través de la Web de referència d'iArxiu (frontal web gestionat per l'arxiver). En cas contrari no es podrà ingressar cap paquet.
+
+**mets.xml** per a paquets d'expedients:
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<mets:mets xmlns:mets="http://www.loc.gov/METS/" TYPE="urn:iarxiu:2.0:templates:catcert:PL_expedient">
+	...
+```
+**mets.xml** per a paquets de documents:
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<mets:mets xmlns:mets="http://www.loc.gov/METS/" TYPE="urn:iarxiu:2.0:templates:catcert:PL_document">
+	...
+```
+
 ## Casos d'ús
 * **Expedient_UpDown_XAdES_Detached_Zip**
 Paquet d'expedient amb 1 document i 1 signatura XAdES detached.
@@ -34,7 +50,7 @@ Paquet d'expedient amb 1 document PDF signat (5MB).
 Els 3 casos fan ús del mètode d'ingrés més adecuat: es pugen els documents de l'expedient (en un fitxer ZIP, mètode UploadOfflineZipIngest) a través d'un servlet http i amb el tiquet retornat es demana l'ingrés asíncron a iArxiu. Amb el segon identificador retornat al sol·licitar l'ingrés, es pot consultar l'estat d'aquest.
 Un cop l'ingrés ha finalitzat (error o ok) els tests també sol·liciten la descàrrega del paquet (_no és necessari descarregar-lo quan s'ingressi a producció, només es fa amb finalitats de testing_).
 
-``` Es recomana consultar l'estat de l'ingrés en repeticions no inferiors als 15 segons per tal de no saturar el servei.```
+``` Es recomana consultar l'estat de l'ingrés en cicles no inferiors als 15 segons per tal de no saturar el servei.```
 
 ## Estructura
 
@@ -55,7 +71,7 @@ Un cop l'ingrés ha finalitzat (error o ok) els tests també sol·liciten la des
 
 ## Securització missatgeria
 SoapUI permet signar les caçaleres SAML necessàries per poder comunicar-se amb iArxiu. El projecte ja incorpora una configuració (des de la Project View > Pestaña WS-Security Configurations) associada a un certificat CDA de prova.
-Per a poder fer-ne ús, abans caldrà que es configuri a iArxiu a l'ens/fons corresponent els permisos necessaris per aquest certificat. 
+Per a poder fer-ne ús, abans caldrà que es configuri a iArxiu a l'ens/fons corresponent els permisos necessaris per aquest certificat (en cas contrari iArxiu retornarà un error referent a que no es confia en aquesta TA, trusted application). 
 Aquesta configuració inicial es gestiona a través de suport@aoc.cat.
 
 ![SoapUI Project View > WS-Security Configurations](/img/ws-security.PNG?raw=true "SoapUI Project View > WS-Security Configurations")
