@@ -90,3 +90,34 @@ Quan s'ingressa un paquet iArxiu determina si aquest existeix ja o no al sistema
 Modificant tan sols alguna d'aquestes metadades iArxiu ja no el detecta com duplicat i permetrà l'ingrés. Per poder reaprofitar els paquest d'exemple adjunts amb el projecte a través d'un petit scrit (```MetsModificator```) es llegeix el fitxer ```mets.xml```de cada paquet i se'n modifica alguna metadada.
 Al primer step de cada TestCase (Update mets.xml) es crida a aquest script i es modifica alguna metadada sensible al control d'unicitat del ```mets.xml``` d'aquell paquet per poder tornar-se a ingressar automàticament, no cal configurar res.
 
+Si no es modifica alguna dada sensible del mets.xml, quan es torni a ingressar el mateix paquet, iArxiu detectarà el paquet com a duplicat i retornarà un missatge tipus:
+```
+<ing:offlineIngestInfo>
+    <ing:status>error</ing:status>
+    <ing:errorCode>CORE-PACKAGEVALIDATOR-PACKAGEALREADYEXISTS:Hash -1907625712:There is another package with the same hash</ing:errorCode>
+    <ing:preservedSignatures>none</ing:preservedSignatures>
+</ing:offlineIngestInfo>
+```
+
+## Visualitzar paquets ingressats
+iArxiu permet l'ingrés de paquets a través de la web de referència o a través de serveis web. Els paquets ingressat a través de refweb són visibles en la fase de pre-ingrés i també un cop ingressats:
+
+Com saber si un paquet s'ha ingressat correctament quan s'envia a través de ws?
+- En l'operació ```OfflineUploadIngest````el servei web retorna un identificador perquè es pugui consultar l'estat de l'ingrés en l'operació _GetOfflineIngestStatus_.
+- L'operació _GetOfflineIngestStatus_ retorna una resposta tipus:
+```
+<ing:offlineIngestInfo>
+            <ing:status>ok</ing:status>
+            <ing:id>catcert:aoc-l-iarxiu-dev:20180226-15295674:3355</ing:id>
+            <ing:preservedSignatures>all</ing:preservedSignatures>
+</ing:offlineIngestInfo>
+```
+Aquesta resposta és suficient per garantir que el paquet s'ha ingressat correctament. Amb aquest identificador únic podem consultar via webservice aquest paquet o també visualment a través de la refweb.
+En aquest cas, l'identificador del paquet ingressat és **catcert:aoc-l-iarxiu-dev:20180226-15295674:3355**
+![Obtenir ID paquet ingresat](/img/obtenir_id_paquet.PNG?raw=true "Obtenir ID paquet ingresat")
+
+Per visualitzar a la refweb (logant-se prèviament a l'ens/fons corresponent a través d'EACAT) un paquet ingressat a través de serveis web, cal cercarlo a l'apartat Consulta, i introduir l'identificador obtingut a l'operació _GetOfflineIngestStatus_:
+![Consulta paquet](/img/consulta_paquet.PNG?raw=true "Consulta paquet")
+
+I podrem visualitzar el  paquet ingressat via webservice:
+![Resultat cerca](/img/resultat_cerca.PNG?raw=true "Resultat cerca")
