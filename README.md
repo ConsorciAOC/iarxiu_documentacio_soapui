@@ -103,8 +103,8 @@ Si no es modifica alguna dada sensible del mets.xml, quan es torni a ingressar e
 iArxiu permet l'ingrés de paquets a través de la web de referència o a través de serveis web. Els paquets ingressat a través de refweb són visibles en la fase de pre-ingrés i també un cop ingressats:
 
 Com saber si un paquet s'ha ingressat correctament quan s'envia a través de ws?
-- En l'operació ```OfflineUploadIngest````el servei web retorna un identificador perquè es pugui consultar l'estat de l'ingrés en l'operació _GetOfflineIngestStatus_.
-- L'operació _GetOfflineIngestStatus_ retorna una resposta tipus:
+- En l'operació ```OfflineUploadIngest``` el servei web retorna un identificador perquè es pugui consultar l'estat de l'ingrés en l'operació ```GetOfflineIngestStatus```.
+- L'operació ```GetOfflineIngestStatus``` retorna una resposta tipus:
 ```
 <ing:offlineIngestInfo>
             <ing:status>ok</ing:status>
@@ -114,9 +114,10 @@ Com saber si un paquet s'ha ingressat correctament quan s'envia a través de ws?
 ```
 Aquesta resposta és suficient per garantir que el paquet s'ha ingressat correctament. Amb aquest identificador únic podem consultar via webservice aquest paquet o també visualment a través de la refweb.
 En aquest cas, l'identificador del paquet ingressat és **catcert:aoc-l-iarxiu-dev:20180226-15295674:3355**
+
 ![Obtenir ID paquet ingresat](/img/obtenir_id_paquet.PNG?raw=true "Obtenir ID paquet ingresat")
 
-Per visualitzar a la refweb (logant-se prèviament a l'ens/fons corresponent a través d'EACAT) un paquet ingressat a través de serveis web, cal cercarlo a l'apartat Consulta, i introduir l'identificador obtingut a l'operació _GetOfflineIngestStatus_:
+Per visualitzar a la refweb (logant-se prèviament a l'ens/fons corresponent a través d'EACAT) un paquet ingressat a través de serveis web, cal cercarlo a l'apartat Consulta, i introduir l'identificador obtingut a l'operació ```GetOfflineIngestStatus```:
 ![Consulta paquet](/img/consulta_paquet.PNG?raw=true "Consulta paquet")
 
 I podrem visualitzar el  paquet ingressat via webservice:
