@@ -1,6 +1,11 @@
 # iArxiu
 Projecte amb tests SoapUI d'exemple d'integració al servei d'iArxiu.
 
+# Diagrama de fluxe
+![Diagrama de fluxe](/img/UploadOfflineZipIngest.png?raw=true "Diagrama de fluxe")
+
+> Aquest darrer id és únic per paquet i l'identifica en futures cerques (tant per WS com a l'apartat Consulta de la web de referència). No confondre amb el id retornat després de fer l'upload del ZIP. Tenen el mateix format però són diferents!
+
 # Configuració
 
 ## 1. Projecte SoapUI
