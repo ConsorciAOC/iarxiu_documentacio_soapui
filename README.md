@@ -5,7 +5,6 @@ Projecte amb tests SoapUI d'exemple d'integració al servei d'iArxiu.
 <p align="center">
 <img align="center" src="/img/UploadOfflineZipIngest.png" />
 </p>
-![Diagrama de fluxe](/img/UploadOfflineZipIngest.png?raw=true "Diagrama de fluxe")
 > Aquest darrer id és únic per paquet i l'identifica en futures cerques (tant per WS com a l'apartat Consulta de la web de referència). No confondre amb el id retornat després de fer l'upload del ZIP. Tenen el mateix format però són diferents!
 
 # Configuració
@@ -31,7 +30,9 @@ packageIdDoc=
 ### 1.2 Arrel del projecte
 Des de la vista de Project View (clic amb botó dret sobre el projecte importat al SoapUI > Show Projecte View), editar la propietat ```baseDir``` i definir l'arrel del projecte dins del LoadScript (script groovy que s'executa al carregar el projecte).
 
-![SoapUI Project View > Overview > LoadScript](/img/loadscript.PNG?raw=true "SoapUI Project View > Overview > LoadScript")
+<p align="center">
+<img align="center" src="/img/loadscript.PNG" />
+</p>
 
 ## 2. Web de referència iArxiu (http://www.preproduccio.iarxiu.eacat.cat/)
 ### 2.1. Plantilles
@@ -56,10 +57,15 @@ Aquestes dues plantilles es carreguen a l'ens/fons de proves creat quan es sol·
 SoapUI permet signar les caçaleres SAML necessàries per poder comunicar-se amb iArxiu. El projecte ja incorpora una configuració (des de la Project View > Pestaña WS-Security Configurations) associada a un certificat CDA de prova.
 Per a poder fer-ne ús, abans caldrà que es configuri a iArxiu a l'ens/fons corresponent els permisos necessaris per aquest certificat (en cas contrari iArxiu retornarà un error referent a que no es confia en aquesta TA, trusted application). 
 
-![SoapUI Project View > WS-Security Configurations](/img/ws-security.PNG?raw=true "SoapUI Project View > WS-Security Configurations")
+<p align="center">
+<img align="center" src="/img/ws-security.PNG" />
+</p>
+
 
 Cada petició aplica la política de securització (signa les capceleres SAML) automàticament:
-![SoapUI Project View > WS-Security Configurations](/img/ws-security_request.PNG?raw=true "SoapUI Project View > WS-Security Configurations")
+<p align="center">
+<img align="center" src="/img/ws-security_request.PNG" />
+</p>
 
 En el procés d'alta al servei es donarà permisos a aquesta CDA sobre l'ens/fons creat.
 
@@ -122,10 +128,16 @@ Com saber si un paquet s'ha ingressat correctament quan s'envia a través de ws?
 Aquesta resposta és suficient per garantir que el paquet s'ha ingressat correctament. Amb aquest identificador únic podem consultar via webservice aquest paquet o també visualment a través de la refweb.
 En aquest cas, l'identificador del paquet ingressat és **catcert:aoc-l-iarxiu-dev:20180226-15295674:3355**
 
-![Obtenir ID paquet ingresat](/img/obtenir_id_paquet.PNG?raw=true "Obtenir ID paquet ingresat")
+<p align="center">
+<img align="center" src="/img/obtenir_id_paquet.PNG" />
+</p>
 
 Per visualitzar a la refweb (logant-se prèviament a l'ens/fons corresponent a través d'EACAT) un paquet ingressat a través de serveis web, cal cercarlo a l'apartat Consulta, i introduir l'identificador obtingut a l'operació ```GetOfflineIngestStatus```:
-![Consulta paquet](/img/consulta_paquet.PNG?raw=true "Consulta paquet")
+<p align="center">
+<img align="center" src="/img/consulta_paquet.PNG" />
+</p>
 
 I podrem visualitzar el  paquet ingressat via webservice:
-![Resultat cerca](/img/resultat_cerca.PNG?raw=true "Resultat cerca")
+<p align="center">
+<img align="center" src="/img/resultat_cerca.PNG" />
+</p>
