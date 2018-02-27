@@ -3,10 +3,18 @@ Projecte amb tests SoapUI d'exemple d'integració al servei d'iArxiu.
 
 # Diagrama de fluxe
 <p align="center">
-<img align="center" src="/img/UploadOfflineZipIngest.png" />
+<img align="center" src="/img/UploadOfflineIngest.png" />
 </p>
+
 > Aquest darrer id és únic per paquet i l'identifica en futures cerques (tant per WS com a l'apartat Consulta de la web de referència). No confondre amb el id retornat després de fer l'upload del ZIP. Tenen el mateix format però són diferents!
 
+
+El paràmetre compressed indica a iArxiu si espera 1 únic fitxer zip amb els documents comprimits o no.
+Si el paràmetre compressed=true (crida POST del client) només es permet la pujada d'1 únic fitxer zip amb els documents comprimits. En canvi si es volen pujar els documents sense comprimir, el servlet es pot cridar més d’un cop amb un mateix tiquet, de forma que no cal enviar tots els fitxers en una mateixa crida.  
+ 
+Com que per un mateix tiquet tots els fitxers van a parar a la mateixa carpeta, s’ha de tenir en compte les següents restriccions quan es faci servir compressed=false: 
+- El fitxer que representa el PIT s’ha de dir mets.xml
+- Els fitxers han de estar referenciats i al mateix directori que el mets.xml. És a dir, que no es poden fer servir directoris a l’atribut xlin:href del tag Flocat al mets.xml. 
 # Configuració
 
 ## 1. Projecte SoapUI
