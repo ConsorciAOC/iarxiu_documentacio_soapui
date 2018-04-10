@@ -3,7 +3,7 @@ Projecte amb tests SoapUI d'exemple d'integració al servei d'iArxiu.
 
 # Diagrama de fluxe
 <p align="center">
-<img align="center" src="./img/UploadOfflineIngest.png" />
+<img align="center" src="img/UploadOfflineIngest.png" />
 </p>
 
 > Aquest darrer id és únic per paquet i l'identifica en futures cerques (tant per WS com a l'apartat Consulta de la web de referència). No confondre amb el id retornat després de fer l'upload del ZIP. Tenen el mateix format però són diferents!
@@ -39,7 +39,7 @@ packageIdDoc=
 Des de la vista de Project View (clic amb botó dret sobre el projecte importat al SoapUI > Show Projecte View), editar la propietat ```baseDir``` i definir l'arrel del projecte dins del LoadScript (script groovy que s'executa al carregar el projecte).
 
 <p align="center">
-<img align="center" src="/img/loadscript.PNG" />
+<img align="center" src="img/loadscript.PNG" />
 </p>
 
 ## 2. Web de referència iArxiu (http://www.preproduccio.iarxiu.eacat.cat/)
@@ -66,13 +66,13 @@ SoapUI permet signar les caçaleres SAML necessàries per poder comunicar-se amb
 Per a poder fer-ne ús, abans caldrà que es configuri a iArxiu a l'ens/fons corresponent els permisos necessaris per aquest certificat (en cas contrari iArxiu retornarà un error referent a que no es confia en aquesta TA, trusted application). 
 
 <p align="center">
-<img align="center" src="/img/ws-security.PNG" />
+<img align="center" src="img/ws-security.PNG" />
 </p>
 
 
 Cada petició aplica la política de securització (signa les capceleres SAML) automàticament:
 <p align="center">
-<img align="center" src="/img/ws-security_request.PNG" />
+<img align="center" src="img/ws-security_request.PNG" />
 </p>
 
 En el procés d'alta al servei es donarà permisos a aquesta CDA sobre l'ens/fons creat.
@@ -137,15 +137,15 @@ Aquesta resposta és suficient per garantir que el paquet s'ha ingressat correct
 En aquest cas, l'identificador del paquet ingressat és **catcert:aoc-l-iarxiu-dev:20180226-15295674:3355**
 
 <p align="center">
-<img align="center" src="/img/obtenir_id_paquet.PNG" />
+<img align="center" src="img/obtenir_id_paquet.PNG" />
 </p>
 
 Per visualitzar a la refweb (logant-se prèviament a l'ens/fons corresponent a través d'EACAT) un paquet ingressat a través de serveis web, cal cercarlo a l'apartat Consulta, i introduir l'identificador obtingut a l'operació ```GetOfflineIngestStatus```:
 <p align="center">
-<img align="center" src="/img/consulta_paquet.PNG" />
+<img align="center" src="img/consulta_paquet.PNG" />
 </p>
 
 I podrem visualitzar el  paquet ingressat via webservice:
 <p align="center">
-<img align="center" src="/img/resultat_cerca.PNG" />
+<img align="center" src="img/resultat_cerca.PNG" />
 </p>
