@@ -1,5 +1,7 @@
 # iArxiu
-Projecte amb tests SoapUI d'exemple d'integració al servei d'iArxiu.
+Projecte amb tests SoapUI d'exemple d'integració al servei d'iArxiu. Es mostren exemples d'ús recomenats (n'hi ha més) per l'ingrés d'expedients/documents. 
+Configuració per defecte fent servir un certificat de proves (key/CDA-1_00.p12) ja carregat a l'entorn de preproducció a l'ens organizationTest/fondsTest.
+Si disposeu del vostre ens/fonds a preproducció, podeu canviar els valors de ens/fonds del fitxer pre.properties o de les propietats del projecte a SOAPUI. Caldrà també que demaneu que s'associi el certificat de proces d'aquest projecte (CN=sistema o aplicació de prova...) amb el vostre ens/fonds.
 
 # Diagrama de fluxe
 <p align="center">
@@ -15,6 +17,9 @@ Si el paràmetre compressed=true (crida POST del client) només es permet la puj
 Com que per un mateix tiquet tots els fitxers van a parar a la mateixa carpeta, s’ha de tenir en compte les següents restriccions quan es faci servir compressed=false: 
 - El fitxer que representa el PIT s’ha de dir mets.xml
 - Els fitxers han de estar referenciats i al mateix directori que el mets.xml. És a dir, que no es poden fer servir directoris a l’atribut xlin:href del tag Flocat al mets.xml. 
+
+La recomenació és fer els uploads amb un únic fitxer .zip.
+
 # Configuració
 
 ## 1. Projecte SoapUI
@@ -24,10 +29,10 @@ Com que per un mateix tiquet tots els fitxers van a parar a la mateixa carpeta, 
 ens=XXX (àlies de l’ens, proporcionat pel Consorci AOC en l'alta al servei)
 fons=XXX (el fons l’ha de crear l’administrador d’ens. Més informació de com fer-ho: https://www.aoc.cat/knowledge-base/com-es-pot-donar-dalta-un-fons-documental/idservei/iarxiu/ i com associar administrador ens/arxiver al fons: https://www.aoc.cat/knowledge-base/com-assignar-un-administrador-de-fonsarxiver-un-fons-documental/idservei/iarxiu/ )
 rol=archivists (rol de l'usuari que fa l'ingrés, no canviar-ho)
-url=www.preproduccio.iarxiu.eacat.cat (url de l'entorn d'iarxiu)
+url=iarxiu-pre.aoc.cat (url de l'entorn d'iarxiu)
 Subject=XXX (nom de l'usuari que fa l'ingrés)
 Issuer=SoapUI_Testing (aplicació)
-downloadUrl=https://www.preproduccio.iarxiu.eacat.cat/
+downloadUrl=https://iarxiu-pre.aoc.cat/
 (variable internes dels tests, no cal editar)
 IngestStatusRequest= 
 uploadTicket=
@@ -35,14 +40,7 @@ uploadservleturl=
 packageIdDoc=
 ```
 
-### 1.2 Arrel del projecte
-Des de la vista de Project View (clic amb botó dret sobre el projecte importat al SoapUI > Show Projecte View), editar la propietat ```baseDir``` i definir l'arrel del projecte dins del LoadScript (script groovy que s'executa al carregar el projecte).
-
-<p align="center">
-<img align="center" src="img/loadscript.PNG" />
-</p>
-
-## 2. Web de referència iArxiu (http://www.preproduccio.iarxiu.eacat.cat/)
+## 2. Web de referència iArxiu (https://iarxiu-pre.aoc.cat)
 ### 2.1. Plantilles
 Els fitxers mets.xml fan ús de plantilles (on es defineixen els vocabularis permesos per construir les metadades). El primer cas d'ús (Expedient_UpDown_XAdES_Detached_Zip) fa ús de la plantilla urn:iarxiu:2.0:templates:catcert:PL_expedient. Els altres dos casos fan servir la urn:iarxiu:2.0:templates:catcert:PL_document.
 Les plantilles han d'estar carregades a l'ens/fons a través de la Web de referència d'iArxiu. En cas contrari no es podrà ingressar cap paquet.
@@ -64,6 +62,7 @@ Aquestes dues plantilles es carreguen a l'ens/fons de proves creat quan es sol·
 ### 2.2 Securització missatgeria
 SoapUI permet signar les caçaleres SAML necessàries per poder comunicar-se amb iArxiu. El projecte ja incorpora una configuració (des de la Project View > Pestaña WS-Security Configurations) associada a un certificat CDA de prova.
 Per a poder fer-ne ús, abans caldrà que es configuri a iArxiu a l'ens/fons corresponent els permisos necessaris per aquest certificat (en cas contrari iArxiu retornarà un error referent a que no es confia en aquesta TA, trusted application). 
+El projecte ve configurat per treballar amb l'entorn de preproducció a l'ens organizationTest/fondsTest. Per fer proves d'inici és suficient però per proves més concretes (p. ex. per fer servir un vocabulari específic del vostre ens) caldrà canviar aquests valors.
 
 <p align="center">
 <img align="center" src="img/ws-security.PNG" />
@@ -75,7 +74,7 @@ Cada petició aplica la política de securització (signa les capceleres SAML) a
 <img align="center" src="img/ws-security_request.PNG" />
 </p>
 
-En el procés d'alta al servei es donarà permisos a aquesta CDA sobre l'ens/fons creat.
+
 
 ## Casos d'ús
 * **Expedient_UpDown_XAdES_Detached_Zip**
@@ -103,8 +102,8 @@ Un cop l'ingrés ha finalitzat (error o ok) els tests també sol·liciten la des
 * **ingest.wsdl** (descriptor per el ws d'ingrés)
 * **dissemination.wsdl** (descriptor per el ws de consulta)
 * **trustore\truststore-preproduccio.jks** (magatzem de certificats de confiança per a **preproducció**)
-* **key\cda-1_vigent.pfx** (clau privada de proves per signar les peticions)
-* **iarxiu-soapui-integracio-project.xml** (projecte SoapUI)
+* **key\CDA-1_00.p12** (clau privada de proves per signar les peticions)
+* **iarxiu-documentacio-soapui-project.xml** (projecte SoapUI)
 
 ## Control d'unicitat
 Quan s'ingressa un paquet iArxiu determina si aquest existeix ja o no al sistema fixant-se amb varis elements, entre ells certs camps de metadades del fitxer ```mets.xml```.
