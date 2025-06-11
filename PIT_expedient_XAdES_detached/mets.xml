@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><mets:mets xmlns:mets="http://www.loc.gov/METS/" TYPE="urn:iarxiu:2.0:templates:catcert:PL_expedient"><mets:dmdSec ID="DMD_md"><mets:mdWrap MDTYPE="OTHER" MIMETYPE="text/xml" OTHERMDTYPE="urn:iarxiu:2.0:vocabularies:catcert:Voc_expedient"><mets:xmlData><voc:expedient xmlns:voc="http://schemas.user.iarxiu.hp.com/2.0/Voc_expedient">
 	<voc:codi_referencia>nototesav</voc:codi_referencia>
-	<voc:numero_expedient>2018-02-26T08:13:39.219</voc:numero_expedient>
+	<voc:numero_expedient>2025-06-11T09:20:28.020</voc:numero_expedient>
 	<voc:codi_classificacio>nototesav</voc:codi_classificacio>
 	<voc:titol_serie_documental>s1</voc:titol_serie_documental>
 	<voc:nivell_descripcio>Unitat documental composta
